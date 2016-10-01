@@ -1,6 +1,6 @@
 # tensorflow-tutorial
 
-A TensorFlow tutorial for computer vision MIT 6.869.
+A TensorFlow tutorial for computer vision class MIT 6.819/6.869.
 
 This tutorial walks you through the basic operations in Tensorflow, and deep neural networks with simple and concrete examples.
 
