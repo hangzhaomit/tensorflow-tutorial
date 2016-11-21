@@ -21,15 +21,15 @@ start_from = ''
 
 def alexnet(x, keep_dropout):
     weights = {
-        'wc1': tf.Variable(tf.random_normal([11, 11, 3, 96], stddev=0.01)),
-        'wc2': tf.Variable(tf.random_normal([5, 5, 96, 256], stddev=0.01)),
-        'wc3': tf.Variable(tf.random_normal([3, 3, 256, 384], stddev=0.01)),
-        'wc4': tf.Variable(tf.random_normal([3, 3, 384, 256], stddev=0.01)),
-        'wc5': tf.Variable(tf.random_normal([3, 3, 256, 256], stddev=0.01)),
+        'wc1': tf.Variable(tf.random_normal([11, 11, 3, 96], stddev=np.sqrt(2./(11*11*3)))),
+        'wc2': tf.Variable(tf.random_normal([5, 5, 96, 256], stddev=np.sqrt(2./(5*5*96)))),
+        'wc3': tf.Variable(tf.random_normal([3, 3, 256, 384], stddev=np.sqrt(2./(3*3*256)))),
+        'wc4': tf.Variable(tf.random_normal([3, 3, 384, 256], stddev=np.sqrt(2./(3*3*384)))),
+        'wc5': tf.Variable(tf.random_normal([3, 3, 256, 256], stddev=np.sqrt(2./(3*3*256)))),
 
-        'wf6': tf.Variable(tf.random_normal([7*7*256, 4096], stddev=0.01)),
-        'wf7': tf.Variable(tf.random_normal([4096, 4096], stddev=0.01)),
-        'wo': tf.Variable(tf.random_normal([4096, 100], stddev=0.01))
+        'wf6': tf.Variable(tf.random_normal([7*7*256, 4096], stddev=np.sqrt(2./(7*7*256)))),
+        'wf7': tf.Variable(tf.random_normal([4096, 4096], stddev=np.sqrt(2./4096))),
+        'wo': tf.Variable(tf.random_normal([4096, 100], stddev=np.sqrt(2./4096)))
     }
 
     biases = {
