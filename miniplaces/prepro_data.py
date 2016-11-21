@@ -48,7 +48,7 @@ if __name__=='__main__':
 		'split': 'train',
 		'img_resize': 256,
 		'data_root': 'YOURPATH/images/',	# MODIFY PATH ACCORDINGLY
-    	'data_list': 'YOURPATH/train.txt'	# MODIFY PATH ACCORDINGLY	
+    		'data_list': 'YOURPATH/train.txt'	# MODIFY PATH ACCORDINGLY	
 	}
 
 	params_val = {
@@ -56,7 +56,7 @@ if __name__=='__main__':
 		'split': 'val',
 		'img_resize': 256,
 		'data_root': 'YOURPATH/images/',	# MODIFY PATH ACCORDINGLY
-    	'data_list': 'YOURPATH/val.txt'		# MODIFY PATH ACCORDINGLY
+    		'data_list': 'YOURPATH/val.txt'		# MODIFY PATH ACCORDINGLY
 	}
 
 	createH5(params_train)
