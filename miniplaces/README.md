@@ -1,5 +1,7 @@
 ## Sample code for miniplaces challenge
 
+To get started:
+
 - Modify data paths accordingly in prepro_data.py
 - Preprocess data into .h5
 
