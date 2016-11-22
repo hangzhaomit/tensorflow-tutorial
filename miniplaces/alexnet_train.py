@@ -8,7 +8,7 @@ batch_size = 200
 load_size = 256
 fine_size = 224
 c = 3
-data_mean = np.asarray([-0.083300798050439,-0.10651495109198,-0.17295466315224])
+data_mean = np.asarray([0.45834960097,0.44674252445,0.41352266842])
 
 # Training Parameters
 learning_rate = 0.001
