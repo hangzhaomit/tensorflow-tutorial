@@ -39,9 +39,9 @@ def alexnet(x, keep_dropout):
         'bc4': tf.Variable(tf.zeros(256)),
         'bc5': tf.Variable(tf.zeros(256)),
 
-        'bf6': tf.Variable(tf.ones(4096)),
-        'bf7': tf.Variable(tf.ones(4096)),
-        'bo': tf.Variable(tf.ones(100))
+        'bf6': tf.Variable(tf.zeros(4096)),
+        'bf7': tf.Variable(tf.zeros(4096)),
+        'bo': tf.Variable(tf.zeros(100))
     }
 
     # Conv + ReLU + LRN + Pool, 224->55->27
