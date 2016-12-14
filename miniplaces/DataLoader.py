@@ -14,8 +14,8 @@ class DataLoaderH5(object):
 
         # read data info from lists
         f = h5py.File(kwargs['data_h5'], "r")
-        self.im_set = f['images']
-        self.lab_set = f['labels']
+        self.im_set = np.array(f['images'])
+        self.lab_set = np.array(f['labels'])
 
         self.num = self.im_set.shape[0]
         assert self.im_set.shape[0]==self.lab_set.shape[0], '#images and #labels do not match!'
@@ -23,6 +23,7 @@ class DataLoaderH5(object):
         assert self.im_set.shape[2]==self.load_size, 'Image size error!'
         print('# Images found:'), self.num
 
+        self.shuffle()
         self._idx = 0
         
     def next_batch(self, batch_size):
@@ -48,6 +49,8 @@ class DataLoaderH5(object):
             self._idx += 1
             if self._idx == self.num:
                 self._idx = 0
+                if self.randomize:
+                    self.shuffle()
         
         return images_batch, labels_batch
     
@@ -56,6 +59,11 @@ class DataLoaderH5(object):
 
     def reset(self):
         self._idx = 0
+
+    def shuffle(self):
+        perm = np.random.permutation(self.num)
+        self.im_set = self.im_set[perm] 
+        self.lab_set = self.lab_set[perm]
 
 # Loading data from disk
 class DataLoaderDisk(object):
@@ -82,8 +90,8 @@ class DataLoaderDisk(object):
 
         # permutation
         perm = np.random.permutation(self.num) 
-        self.list_im = self.list_im[perm]
-        self.list_lab = self.list_lab[perm]
+        self.list_im[:, ...] = self.list_im[perm, ...]
+        self.list_lab[:] = self.list_lab[perm, ...]
 
         self._idx = 0
         
