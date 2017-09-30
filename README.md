@@ -1,15 +1,15 @@
 # tensorflow-tutorial
 
-A TensorFlow tutorial for computer vision class MIT 6.819/6.869.
+A TensorFlow tutorial for the MIT computer vision class (6.819/6.869).
 
-This tutorial walks you through the basic operations in Tensorflow, and deep neural networks with simple and concrete examples.
+This tutorial walks you through basic operations in TensorFlow, and deep neural networks with simple and concrete examples.
 
 Sample code for miniplaces challenge can be found in ./miniplaces/ folder.
 
-## Installations
+## Installation
 
-Before you start, please install TensorFlow and Jupyter Notebook:
+Before you start, please use `pip` to install the packages `tensorflow`, `jupyter`, and `matplotlib`. We highly recommend using [virtualenv](https://virtualenv.pypa.io/en/stable) to avoid dependency problems. Note that the current version of TensorFlow (1.3) is not compatible with older versions. Please install the newest version if you are currently running an older version.
 
-- TensorFlow: https://www.tensorflow.org/versions/r0.10/get_started/os_setup.html#download-and-setup
-
-- Jupyter Notebook: http://jupyter.readthedocs.io/en/latest/install.html
+    pip install tensorflow==1.3
+    pip install jupyter
+    pip install matplotlib
