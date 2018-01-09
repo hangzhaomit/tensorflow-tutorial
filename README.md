@@ -2,7 +2,9 @@
 
 A TensorFlow tutorial for the MIT computer vision class (6.819/6.869).
 
-This tutorial walks you through basic operations in TensorFlow, and deep neural networks with simple and concrete examples.
+- This tutorial walks you through basic operations in TensorFlow, and deep neural networks with simple and concrete examples.
+
+- Sample code for miniplaces challenge can be found in ./miniplaces/ folder.
 
 ## Installation
 
